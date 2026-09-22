@@ -22,6 +22,9 @@ jobs:
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: Type010
+          # 必须用个人令牌才能读到私有仓库的贡献
+          # 仓库自带的 GITHUB_TOKEN 是仓库级权限，只能看到公开贡献
+          github_token: ${{ secrets.SNAKE_TOKEN }}
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
